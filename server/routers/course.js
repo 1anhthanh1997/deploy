@@ -22,7 +22,7 @@ router.post('/courses', (req, res) => {
         course.categories.push(req.body.categories.length[i]);
     }
     course.save().then((doc) => {
-        res.send(doc)
+        res.send(course.categories)
     }).catch((err) => res.send(err))
 })
 router.get('/courses', (req, res) => {

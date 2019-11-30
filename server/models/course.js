@@ -13,18 +13,18 @@ let courseSchema =new mongoose.Schema({
         required:true
     },
     schedule:{
-        type:String,
+        type:[String],
         trim:true,
         required: true
     },
     studyTime:{
         lessonTime:{
-            type:[String],
+            type:String,
             trim:true,
             required: true
         },
         courseTime:{
-            type:[String],
+            type:String,
             trim:true,
             required: true
         }
@@ -35,7 +35,7 @@ let courseSchema =new mongoose.Schema({
         required:true
     },
     categories:{
-        type:String,
+        type:[String],
         trim:true,
         required: true
     },
