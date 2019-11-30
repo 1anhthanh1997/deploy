@@ -5,16 +5,22 @@ router.post('/courses', (req, res) => {
     var course = new Course({
         name: req.body.name,
         teacherId: req.body.teacherId,
-        schedule: req.body.schedule,
+         schedule: [],
         studyTime: {
             lessonTime: req.body.studyTime.lessonTime,
             courseTime: req.body.studyTime.courseTime,
         },
         tuition: req.body.tuition,
-        categories: req.body.categories,
+        categories: [],
         topic: req.body.topic,
         subject: req.body.subject
     });
+    for (var i = 0; i < req.body.schedule.length; i++) {
+        course.schedule.push(req.body.schedule.length[i]);
+    }
+    for (var i = 0; i < req.body.categories.length; i++) {
+        course.categories.push(req.body.categories.length[i]);
+    }
     course.save().then((doc) => {
         res.send(doc)
     }).catch((err) => res.send(err))
