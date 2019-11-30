@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57aaf603-6724-487f-8419-771c54803090" name="Default Changelist" comment="">
+    <list default="true" id="86bbe543-4840-44c9-886b-7087219efac5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/db/mongoose.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/emails/account.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routers/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routers/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-manager" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routers/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/mongodb-connect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/mongodb-delete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/mongodb-find.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground/mongodb-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/mongoose.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/classGroup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/course.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/document.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/homework.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/lecture.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routers/course.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routers/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/test/student.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/test/teacher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/test/todo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tests/server.test.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,26 +47,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1T9gtcMzpI6qmPbLAQkFAZE9ZqD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1UL999xUNHG65mmnUKhBD0KudtT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -52,18 +74,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="57aaf603-6724-487f-8419-771c54803090" name="Default Changelist" comment="" />
-      <created>1572877940759</created>
+      <changelist id="86bbe543-4840-44c9-886b-7087219efac5" name="Default Changelist" comment="" />
+      <created>1575124855260</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572877940759</updated>
-      <workItem from="1572877942129" duration="9720000" />
-      <workItem from="1572920950152" duration="9265000" />
-      <workItem from="1573383405546" duration="12865000" />
-      <workItem from="1573531534717" duration="1003000" />
-      <workItem from="1574125478807" duration="8009000" />
-      <workItem from="1574684219106" duration="14602000" />
-      <workItem from="1574730111752" duration="11154000" />
+      <updated>1575124855260</updated>
+      <workItem from="1575124859155" duration="202000" />
+      <workItem from="1575125087419" duration="2544000" />
+      <workItem from="1575128056447" duration="124000" />
     </task>
     <servers />
   </component>
@@ -82,8 +100,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
