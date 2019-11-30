@@ -16,10 +16,10 @@ router.post('/courses', (req, res) => {
         subject: req.body.subject
     });
     for (var i = 0; i < req.body.schedule.length; i++) {
-        course.schedule.push(req.body.schedule.length[i]);
+        course.schedule.push(req.body.schedule[i]);
     }
     for (var i = 0; i < req.body.categories.length; i++) {
-        course.categories.push(req.body.categories.length[i]);
+        course.categories.push(req.body.categories[i]);
     }
     course.save().then((doc) => {
         res.send(doc)
