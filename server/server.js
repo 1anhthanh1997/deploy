@@ -2,7 +2,13 @@ const express = require('express')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
 const courseRouter=require('./routers/course')
-
+const documentRouter=require('./routers/document')
+const homeworkRouter=require('./routers/hơmework')
+const classGroupRouter=require('./routers/classGroup')
+const lectureRouter=require('./routers/lecture')
+const questionRouter=require("./routers/question")
+const reviewRouter=require('./routers/review')
+const testRouter=require('./routers/test')
 const app = express()
 const port = process.env.PORT
 
@@ -21,6 +27,13 @@ app.use(express.static('public'));
 app.use(express.json())
 app.use(userRouter)
 app.use(courseRouter)
+app.use(documentRouter)
+app.use(homeworkRouter)
+app.use(classGroupRouter)
+app.use(lectureRouter)
+app.use(questionRouter)
+app.use(reviewRouter)
+app.use(testRouter)
 //Register
 // {
 //     "username":"1anhthanh1997",

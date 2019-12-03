@@ -3,12 +3,12 @@ let autoIncrement=require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose);
 let reviewSchema =new mongoose.Schema({
     courseID:{
-        type:String,
+        type:Number,
         trim: true,
         required:true
     },
     studentID:{
-        type:String,
+        type:Number,
         trim: true,
         required:true
     },
@@ -24,6 +24,6 @@ let reviewSchema =new mongoose.Schema({
     }
 
 })
-reviewSchema.plugin(autoIncrement.plugin,'Review')
-const Review=mongoose.model('Review',reviewSchema)
+reviewSchema.plugin(autoIncrement.plugin,'review')
+const Review=mongoose.model('review',reviewSchema)
 module.exports = {Review}

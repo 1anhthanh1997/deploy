@@ -3,12 +3,12 @@ let autoIncrement=require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose);
 let lectureSchema =new mongoose.Schema({
     courseID:{
-        type:String,
+        type:Number,
         trim: true,
         required:true
     },
     teacherID:{
-        type:String,
+        type:Number,
         trim: true,
         required:true
     },
@@ -22,13 +22,13 @@ let lectureSchema =new mongoose.Schema({
         required:true,
         trim:true,
     },
-    link:{
+    lectureLink:{
         type:String,
         required:true,
         trim:true,
     }
 
 })
-lectureSchema.plugin(autoIncrement.plugin,'Lecture')
-const Lecture=mongoose.model('Lecture',lectureSchema)
+lectureSchema.plugin(autoIncrement.plugin,'lecture')
+const Lecture=mongoose.model('lecture',lectureSchema)
 module.exports = {Lecture}

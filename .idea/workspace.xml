@@ -3,6 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="86bbe543-4840-44c9-886b-7087219efac5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/classGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/hơmework.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/lecture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routers/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/classGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/classGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/document.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/homework.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/homework.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/lecture.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/lecture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +37,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1T9gtcMzpI6qmPbLAQkFAZE9ZqD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -54,7 +73,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="57aaf603-6724-487f-8419-771c54803090" name="Default Changelist" comment="" />
+      <changelist id="86bbe543-4840-44c9-886b-7087219efac5" name="Default Changelist" comment="" />
       <created>1572877940759</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -67,6 +86,7 @@
       <workItem from="1574684219106" duration="14602000" />
       <workItem from="1574730111752" duration="11154000" />
       <workItem from="1575129915095" duration="1469000" />
+      <workItem from="1575292569340" duration="9299000" />
     </task>
     <servers />
   </component>

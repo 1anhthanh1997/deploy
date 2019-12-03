@@ -3,16 +3,16 @@ let autoIncrement=require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose);
 let testSchema =new mongoose.Schema({
     courseID:{
-       type:String,
+       type:Number,
        trim:true,
        required: true
     },
     studentID:{
-        type:String,
+        type:Number,
         trim:true,
         required: true
     },
-    name:{
+    testName:{
         type:String,
         trim:true,
         required: true
@@ -22,6 +22,6 @@ let testSchema =new mongoose.Schema({
         required: true
     }
 })
-testSchema.plugin(autoIncrement.plugin,'Test')
-const Test=mongoose.model('Test',testSchema)
+testSchema.plugin(autoIncrement.plugin,'test')
+const Test=mongoose.model('test',testSchema)
 module.exports = {Test}

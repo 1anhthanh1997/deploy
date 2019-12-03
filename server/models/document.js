@@ -3,12 +3,12 @@ let autoIncrement=require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose);
 let documentSchema =new mongoose.Schema({
     courseID:{
-        type:String,
+        type:Number,
         required:true,
         trim:true,
     },
     teacherID:{
-        type:String,
+        type:Number,
         required:true,
         trim:true,
     },
@@ -24,6 +24,6 @@ let documentSchema =new mongoose.Schema({
     }
 
 })
-documentSchema.plugin(autoIncrement.plugin,'Document')
-const Document=mongoose.model('Document',documentSchema)
+documentSchema.plugin(autoIncrement.plugin,'document')
+const Document=mongoose.model('document',documentSchema)
 module.exports = {Document}

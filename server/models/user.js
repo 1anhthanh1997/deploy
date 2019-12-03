@@ -84,6 +84,6 @@ userSchema.pre('save',async function (next) {
     }
     next();
 })
-userSchema.plugin(autoIncrement.plugin,'User')
-const User=mongoose.model('User',userSchema)
+userSchema.plugin(autoIncrement.plugin,'user')
+const User=mongoose.model('user',userSchema)
 module.exports = {User}

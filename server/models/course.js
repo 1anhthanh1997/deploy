@@ -8,7 +8,7 @@ let courseSchema =new mongoose.Schema({
         required:true
     },
     teacherId:{
-        type:String,
+        type:Number,
         trim: true,
         required:true
     },

@@ -3,7 +3,7 @@ let autoIncrement=require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose);
 let classGroupSchema =new mongoose.Schema({
     courseID:{
-        type:String,
+        type:Number,
         trim:true,
         required: true
     },
@@ -20,6 +20,6 @@ let classGroupSchema =new mongoose.Schema({
 
 
 })
-classGroupSchema.plugin(autoIncrement.plugin,'ClassGroup')
-const ClassGroup=mongoose.model('ClassGroup',classGroupSchema)
+classGroupSchema.plugin(autoIncrement.plugin,'classGroup')
+const ClassGroup=mongoose.model('classGroup',classGroupSchema)
 module.exports = {ClassGroup}
