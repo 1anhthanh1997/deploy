@@ -42,7 +42,18 @@ app.use(testRouter)
 app.use(featuredCourseRouter)
 app.use(topicRouter)
 app.use(slideRouter)
-app.use(cors)
+app.use(cors({
+    origin:['http://localhost:3000','http://127.0.0.1:4200'],
+    credentials:true
+}));
+app.use(function (req, res, next) {
+
+    res.header('Access-Control-Allow-Origin', "http://localhost:4200");
+    res.header('Access-Control-Allow-Headers', true);
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    next();
+});
 //Register
 // {
 //     "username":"1anhthanh1997",
