@@ -9,6 +9,9 @@ const lectureRouter=require('./routers/lecture')
 const questionRouter=require("./routers/question")
 const reviewRouter=require('./routers/review')
 const testRouter=require('./routers/test')
+const featuredCourseRouter=require('./routers/featuredCourse')
+const topicRouter=require('./routers/topic')
+const slideRouter=require('./routers/slide')
 const app = express()
 const port = process.env.PORT
 
@@ -34,6 +37,9 @@ app.use(lectureRouter)
 app.use(questionRouter)
 app.use(reviewRouter)
 app.use(testRouter)
+app.use(featuredCourseRouter)
+app.use(topicRouter)
+app.use(slideRouter)
 //Register
 // {
 //     "username":"1anhthanh1997",

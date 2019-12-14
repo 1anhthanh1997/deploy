@@ -1,6 +1,43 @@
 const express = require('express')
+const mongoose=require('mongoose')
+
+const multer=require('multer')
 const {Document} = require("../models/document")
 const router = express.Router()
+const conn = mongoose.createConnection(process.env.MONGODB_URL);
+let GridFsStorage = require('multer-gridfs-storage');
+let Grid = require('gridfs-stream');
+Grid.mongo = mongoose.mongo;
+let gfs;
+
+conn.once('open', () => {
+    // Init stream
+    gfs = Grid(conn.db, mongoose.mongo);
+    gfs.collection('uploads');
+});
+
+// Create storage engine
+const storage = new GridFsStorage({
+    url: process.env.MONGODB_URL,
+    file: (req, file) => {
+        return new Promise((resolve, reject) => {
+            const filename = file.originalname;
+            const fileInfo = {
+                filename: filename,
+                bucketName: 'uploads'
+            };
+            resolve(fileInfo);
+        });
+    }
+});
+
+// Multer configuration for single file uploads
+let upload = multer({
+    storage: storage
+})
+router.post('/documents/documentFile', upload.single('document'), async (req, res) => {
+   res.send()
+})
 router.post('/documents', (req, res) => {
     var document = new Document({
        courseID:req.body.courseID,

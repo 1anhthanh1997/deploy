@@ -4,8 +4,14 @@ const router = express.Router()
 router.post('/courses', (req, res) => {
     var course = new Course({
         name: req.body.name,
-        teacherId: req.body.teacherId,
-         schedule: [],
+        teacher:{
+            teacherId: req.body.teacherID,
+            teacherName: req.body.teacherName,
+            linkAvatar:req.body.linkAvatar
+        },
+        description:req.body.description,
+        content:req.body.content,
+        schedule: [],
         studyTime: {
             lessonTime: req.body.studyTime.lessonTime,
             courseTime: req.body.studyTime.courseTime,
@@ -13,7 +19,8 @@ router.post('/courses', (req, res) => {
         tuition: req.body.tuition,
         categories: [],
         topic: req.body.topic,
-        subject: req.body.subject
+        subject: req.body.subject,
+        status:req.body.status
     });
     for (var i = 0; i < req.body.schedule.length; i++) {
         course.schedule.push(req.body.schedule[i]);

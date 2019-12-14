@@ -21,7 +21,12 @@ let documentSchema =new mongoose.Schema({
         type:String,
         required:true,
         trim:true,
+    },
+    documentFile:{
+        type:Buffer,
+        required:true
     }
+
 
 })
 documentSchema.plugin(autoIncrement.plugin,'document')
