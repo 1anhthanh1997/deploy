@@ -3,30 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86bbe543-4840-44c9-886b-7087219efac5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/avatars/d91d9d76ef4bd15778c7b9bdee6b26f3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/avatars/0417008cc9c630964e5bf6311deb8cc4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/avatars/3847a6cf2d791429822a89908ec69870" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/avatars/995706c90fe0e0242efac1d4b3e5cc84" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/middleware/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/featuredCourse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/notification.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/topic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routers/featuredCourse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routers/slide.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routers/topic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/classGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/classGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/document.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/document.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routers/classGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/classGroup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routers/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/course.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routers/document.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/document.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +73,7 @@
       <workItem from="1575129915095" duration="1469000" />
       <workItem from="1575292569340" duration="36821000" />
       <workItem from="1575731386207" duration="26965000" />
-      <workItem from="1576300293799" duration="732000" />
+      <workItem from="1576300293799" duration="2008000" />
     </task>
     <servers />
   </component>

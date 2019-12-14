@@ -5,12 +5,12 @@ router.post('/courses', (req, res) => {
     var course = new Course({
         name: req.body.name,
         teacher:{
-            teacherId: req.body.teacherID,
-            teacherName: req.body.teacherName,
-            linkAvatar:req.body.linkAvatar
+            teacherId: req.body.teacher.teacherId,
+            teacherName: req.body.teacher.teacherName,
+            linkAvatar:req.body.teacher.linkAvatar
         },
         description:req.body.description,
-        content:req.body.content,
+        content:[],
         schedule: [],
         studyTime: {
             lessonTime: req.body.studyTime.lessonTime,
@@ -28,6 +28,9 @@ router.post('/courses', (req, res) => {
     for (var i = 0; i < req.body.categories.length; i++) {
         course.categories.push(req.body.categories[i]);
     }
+    for (var i = 0; i < req.body.content.length; i++) {
+        course.content.push(req.body.content[i]);
+    }
     course.save().then((doc) => {
         res.send(doc)
     }).catch((err) => res.send(err))
@@ -40,6 +43,12 @@ router.get('/courses', (req, res) => {
 router.get('/courses/topic', (req, res) => {
     // console.log(req.query.subject);
     Course.find({subject: req.query.subject}).then((courses) => {
+        res.send(courses)
+    }).catch((err) => res.send(err))
+})
+router.get('/courses/:id', (req, res) => {
+    // console.log(req.query.subject);
+    Course.findById(req.params.id).then((courses) => {
         res.send(courses)
     }).catch((err) => res.send(err))
 })
