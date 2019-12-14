@@ -1,6 +1,7 @@
 const express = require('express')
 const {Course} = require("../models/course")
 const router = express.Router()
+
 router.post('/courses', (req, res) => {
     var course = new Course({
         name: req.body.name,
