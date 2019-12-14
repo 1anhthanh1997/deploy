@@ -1,28 +1,35 @@
 {
-  "name": "task-manager",
+  "name": "node-todo-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "env-cmd ./config/dev.env nodemon src/index.js"
+    "start": "node server/server.js",
+    "dev": "env-cmd ./config/dev.env nodemon server/server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^6.3.1",
-    "bcryptjs": "^2.4.3",
-    "express": "^4.16.4",
-    "jsonwebtoken": "^8.4.0",
-    "mongodb": "^3.1.10",
-    "mongoose": "^5.3.16",
-    "multer": "^1.4.1",
-    "sharp": "^0.21.1",
-    "validator": "^10.9.0"
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.5",
+    "express": "^4.14.0",
+    "gridfs-stream": "^1.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.13",
+    "mongoose-auto-increment": "^5.0.1",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.0.1",
+    "sharp": "^0.23.4"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2",
-    "nodemon": "^1.18.9"
+    "expect": "^24.9.0",
+    "mocha": "^6.2.1",
+    "nodemon": "^1.19.3",
+    "supertest": "^4.0.2"
   }
 }
