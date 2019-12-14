@@ -12,7 +12,7 @@ const testRouter=require('./routers/test')
 const featuredCourseRouter=require('./routers/featuredCourse')
 const topicRouter=require('./routers/topic')
 const slideRouter=require('./routers/slide')
-let cors = require('cors')
+// let cors = require('cors')
 const app = express()
 const port = process.env.PORT
 
