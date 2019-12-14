@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86bbe543-4840-44c9-886b-7087219efac5" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/mongoose.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/mongoose.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +73,7 @@
       <workItem from="1575129915095" duration="1469000" />
       <workItem from="1575292569340" duration="36821000" />
       <workItem from="1575731386207" duration="26965000" />
-      <workItem from="1576300293799" duration="4137000" />
+      <workItem from="1576300293799" duration="5453000" />
     </task>
     <servers />
   </component>
