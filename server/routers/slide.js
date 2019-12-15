@@ -42,4 +42,19 @@ router.get('/slide', async (req, res) => {
     //     res.status(400).send(e);
     // })
 })
+router.delete('/slide/:id', async (req, res) => {
+    // res.send(req.user)
+    try{
+        let slide=await Slide.findByIdAndRemove(req.params.id);
+        res.status(200).send(slide)
+    }catch (e) {
+        res.status(400).send(e)
+    }
+    const slide=await Slide.find();
+    // Slide.find().then((slides) => {
+    //     res.send({slides});
+    // }, (e) => {
+    //     res.status(400).send(e);
+    // })
+})
 module.exports = router

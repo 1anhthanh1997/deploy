@@ -19,7 +19,7 @@ router.post('/classGroups/sendRequest/:id', async (req,res)=>{
     try{
         let classGroup=await ClassGroup.findById(req.params.id)
         console.log (classGroup)
-        classGroup=await classGroup.addRequest(req.body.id,req.body.username)
+        classGroup=await classGroup.addRequest(req.body.userId,req.body.username)
 
         res.send(classGroup)
     }catch (e) {
@@ -27,13 +27,30 @@ router.post('/classGroups/sendRequest/:id', async (req,res)=>{
     }
 
 })
+router.post('/classGroups/refuseRequest/:id', async (req,res)=>{
+    try{
+        let classGroup=await ClassGroup.findById(req.params.id)
 
+        classGroup.requests = await classGroup.requests.filter((request) => {
+            // console.log(3!==3)
+            // console.log(typeof request.userId )
+            // console.log(typeof req.query.userId )
+            return request.userId !== req.body.userId
+        })
+        console.log(classGroup.requests)
+        classGroup.save()
+        res.send(classGroup)
+    }catch (e) {
+        res.status(400).send(e)
+    }
+})
 router.post('/classGroups/acceptRequest/:id', async (req,res)=>{
     try{
         let classGroup=await ClassGroup.findById(req.params.id)
-        classGroup=await classGroup.addMember(req.body.id,req.body.username)
+        classGroup=await classGroup.addMember(req.body.userId,req.body.username)
         classGroup.requests = await classGroup.requests.filter((request) => {
-            return request.id !== req.body.id
+
+            return request.userId !== req.body.userId
         })
         console.log(classGroup.requests)
         classGroup.save()

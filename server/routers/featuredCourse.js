@@ -5,14 +5,16 @@ router.post('/featuredCourses', (req, res) => {
     var featuredCourse = new FeaturedCourse({
         name: req.body.name,
         teacher:{
-            teacherId: req.body.teacherID,
-            teacherName: req.body.teacherName,
-            linkAvatar:req.body.linkAvatar
+            teacherId: req.body.teacher.teacherId,
+            teacherName: req.body.teacher.teacherName,
+            linkAvatar:req.body.teacher.linkAvatar
         },
+        description:req.body.description,
+        content:[],
         schedule: [],
         studyTime: {
             lessonTime: req.body.studyTime.lessonTime,
-            featuredCourseTime: req.body.studyTime.featuredCourseTime,
+            courseTime: req.body.studyTime.courseTime,
         },
         tuition: req.body.tuition,
         categories: [],
@@ -25,6 +27,9 @@ router.post('/featuredCourses', (req, res) => {
     }
     for (var i = 0; i < req.body.categories.length; i++) {
         featuredCourse.categories.push(req.body.categories[i]);
+    }
+    for (var i = 0; i < req.body.content.length; i++) {
+        featuredCourse.content.push(req.body.content[i]);
     }
     featuredCourse.save().then((doc) => {
         res.send(doc)

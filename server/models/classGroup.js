@@ -18,8 +18,7 @@ let classGroupSchema = new mongoose.Schema({
         required: true
     },
     members: [{
-        id: {
-            unique: true,
+        userId: {
             type: Number
         },
         username: {
@@ -27,9 +26,8 @@ let classGroupSchema = new mongoose.Schema({
         }
     }],
     requests: [{
-        id: {
+        userId: {
             type: Number,
-            unique: true
         },
         username: {
             type: String
@@ -54,7 +52,7 @@ let classGroupSchema = new mongoose.Schema({
 classGroupSchema.methods.addRequest = async function (id, username) {
     const classGroup = this
     let request = {
-        id: id,
+        userId: id,
         username: username
     }
     classGroup.requests.push(request)
@@ -82,7 +80,7 @@ classGroupSchema.methods.deleteRequest = async function (id) {
 classGroupSchema.methods.addMember = async function (id, username) {
     const classGroup = this
     let member = {
-        id: id,
+        userId: id,
         username: username
     }
     classGroup.members.push(member)

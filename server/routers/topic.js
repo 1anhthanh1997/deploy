@@ -9,6 +9,11 @@ router.post('/topics', (req, res) => {
         res.send(doc)
     }).catch((err) => res.send(err))
 })
+router.get('/topics', (req, res) => {
+    Topic.find().then((docs) => {
+        res.send(docs)
+    }).catch((err) => res.send(err))
+})
 //get all topic of courses
 router.get('/topics/courseID', (req, res) => {
     let courseID=req.query.courseID

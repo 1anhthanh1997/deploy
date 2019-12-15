@@ -2,26 +2,26 @@ var {mongoose} = require('../db/mongoose');
 let autoIncrement=require('mongoose-auto-increment');
 autoIncrement.initialize(mongoose);
 let featuredCourseSchema =new mongoose.Schema({
-    name:{
-        type:String,
+    name: {
+        type: String,
         trim: true,
-        required:true
+        required: true
     },
-    teacher:{
-        teacherId:{
-            type:Number,
+    teacher: {
+        teacherId: {
+            type: Number,
             trim: true,
-            required:true
+            required: true
         },
-        teacherName:{
-            type:String,
-            trim:true,
-            required:true
+        teacherName: {
+            type: String,
+            trim: true,
+            required: true
         },
-        linkAvatar:{
-            type:String,
-            trim:true,
-            required:true
+        linkAvatar: {
+            type: String,
+            trim: true,
+            required: true
         },
     },
     description: {
@@ -34,41 +34,41 @@ let featuredCourseSchema =new mongoose.Schema({
         trim: true,
         required: true
     },
-    schedule:{
-        type:[String],
-        trim:true,
+    schedule: {
+        type: [String],
+        trim: true,
         required: true
     },
-    studyTime:{
-        lessonTime:{
-            type:String,
-            trim:true,
+    studyTime: {
+        lessonTime: {
+            type: String,
+            trim: true,
             required: true
         },
-        courseTime:{
-            type:String,
-            trim:true,
+        courseTime: {
+            type: String,
+            trim: true,
             required: true
         }
 
     },
-    tuition:{
-        type:Number,
-        required:true
-    },
-    categories:{
-        type:[String],
-        trim:true,
+    tuition: {
+        type: Number,
         required: true
     },
-    topic:{
-        type:[String],
-        trim:true,
+    categories: {
+        type: [String],
+        trim: true,
         required: true
     },
-    subject:{
-        type:String,
-        trim:true,
+    topic: {
+        type: [String],
+        trim: true,
+        required: true
+    },
+    subject: {
+        type: String,
+        trim: true,
         required: true
     },
     status:{
