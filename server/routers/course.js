@@ -17,35 +17,35 @@ const upload = multer({
 })
 router.post('/courses',async (req, res) => {
     try{
-
-        var course = new Course({
-            name: req.body.name,
-            teacher:{
-                teacherId: req.body.teacher.teacherId,
-                teacherName: req.body.teacher.teacherName,
-
-            },
-            description:req.body.description,
-            content:[],
-            schedule: [],
-            studyTime: {
-                lessonTime: req.body.studyTime.lessonTime,
-                courseTime: req.body.studyTime.courseTime,
-            },
-            tuition: req.body.tuition,
-            categories: [],
-            topic: req.body.topic,
-            subject: req.body.subject,
-        });
-        for (var i = 0; i < req.body.schedule.length; i++) {
-            course.schedule.push(req.body.schedule[i]);
-        }
-        for (var i = 0; i < req.body.categories.length; i++) {
-            course.categories.push(req.body.categories[i]);
-        }
-        for (var i = 0; i < req.body.content.length; i++) {
-            course.content.push(req.body.content[i]);
-        }
+        const course=req.body
+        // var course = new Course({
+        //         //     name: req.body.name,
+        //         //     teacher:{
+        //         //         teacherId: req.body.teacher.teacherId,
+        //         //         teacherName: req.body.teacher.teacherName,
+        //         //
+        //         //     },
+        //         //     description:req.body.description,
+        //         //     content:[],
+        //         //     schedule: [],
+        //         //     studyTime: {
+        //         //         lessonTime: req.body.studyTime.lessonTime,
+        //         //         courseTime: req.body.studyTime.courseTime,
+        //         //     },
+        //         //     tuition: req.body.tuition,
+        //         //     categories: [],
+        //         //     topic: req.body.topic,
+        //         //     subject: req.body.subject,
+        //         // });
+        //         // for (var i = 0; i < req.body.schedule.length; i++) {
+        //         //     course.schedule.push(req.body.schedule[i]);
+        //         // }
+        //         // for (var i = 0; i < req.body.categories.length; i++) {
+        //         //     course.categories.push(req.body.categories[i]);
+        //         // }
+        //         // for (var i = 0; i < req.body.content.length; i++) {
+        //         //     course.content.push(req.body.content[i]);
+        //         // }
         course.save()
         res.send(course)
     }catch (e) {
