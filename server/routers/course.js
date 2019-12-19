@@ -16,8 +16,9 @@ const upload = multer({
     }
 })
 router.post('/courses',async (req, res) => {
+    let course=new Course(req.body)
     try{
-        const course=req.body
+        await course.save();
         // var course = new Course({
         //         //     name: req.body.name,
         //         //     teacher:{
@@ -46,8 +47,8 @@ router.post('/courses',async (req, res) => {
         //         // for (var i = 0; i < req.body.content.length; i++) {
         //         //     course.content.push(req.body.content[i]);
         //         // }
-        course.save()
-        res.send(course)
+
+        res.status(200).send(course)
     }catch (e) {
         res.send(e)
     }

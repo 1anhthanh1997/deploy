@@ -21,7 +21,6 @@ let courseSchema = new mongoose.Schema({
         avatar: {
             type: Buffer,
             trim: true,
-            required: true
         },
     },
     description: {
