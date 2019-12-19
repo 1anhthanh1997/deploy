@@ -15,15 +15,15 @@ const upload = multer({
         cb(undefined, true)
     }
 })
-router.post('/courses',upload.single('avatar'),async (req, res) => {
+router.post('/courses',async (req, res) => {
     try{
-        const buffer = await sharp(req.file.buffer).resize({height: 250, width: 250}).png().toBuffer()
+
         var course = new Course({
             name: req.body.name,
             teacher:{
                 teacherId: req.body.teacher.teacherId,
                 teacherName: req.body.teacher.teacherName,
-                avatar:buffer
+
             },
             description:req.body.description,
             content:[],
