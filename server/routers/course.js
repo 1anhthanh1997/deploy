@@ -8,7 +8,7 @@ router.post('/courses', (req, res) => {
         teacher:{
             teacherId: req.body.teacher.teacherId,
             teacherName: req.body.teacher.teacherName,
-            linkAvatar:req.body.teacher.linkAvatar
+            avatar:req.body.teacher.avatar
         },
         description:req.body.description,
         content:[],
@@ -21,7 +21,6 @@ router.post('/courses', (req, res) => {
         categories: [],
         topic: req.body.topic,
         subject: req.body.subject,
-        status:req.body.status
     });
     for (var i = 0; i < req.body.schedule.length; i++) {
         course.schedule.push(req.body.schedule[i]);

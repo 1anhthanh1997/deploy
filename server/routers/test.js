@@ -1,16 +1,14 @@
 const express = require('express')
 const {Test} = require("../models/test")
 const router = express.Router()
-router.post('/tests', (req, res) => {
-    var test = new Test({
-        courseID:req.body.courseID,
-        studentID:req.body.studentID,
-        testName:req.body.testName,
-        result: req.body.result
-    });
-    test.save().then((doc) => {
-        res.send(doc)
-    }).catch((err) => res.send(err))
+router.post('/tests', async (req, res) => {
+    try{
+        const test= new Test(req.body);
+        test.save();
+        res.send()
+    }catch (e) {
+        res.status(400).send(e)
+    }
 })
 //get all test of courses
 router.get('/tests/courseID', (req, res) => {

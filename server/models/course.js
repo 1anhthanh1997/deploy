@@ -18,8 +18,8 @@ let courseSchema = new mongoose.Schema({
             trim: true,
             required: true
         },
-        linkAvatar: {
-            type: String,
+        avatar: {
+            type: Buffer,
             trim: true,
             required: true
         },
@@ -70,12 +70,8 @@ let courseSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true
-    },
-    status:{
-        type:String,
-        trim:true,
-        required:true
     }
+
 })
 courseSchema.plugin(autoIncrement.plugin, 'course')
 const Course = mongoose.model('course', courseSchema)

@@ -28,6 +28,7 @@ const upload = multer({
 })
 router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) => {
     const buffer = await sharp(req.file.buffer).resize({height: 250, width: 250}).png().toBuffer()
+    console.log("thanh:"+buffer)
     req.user.avatar = buffer
     await req.user.save()
     res.send()
@@ -56,9 +57,9 @@ router.post('/users', async (req, res) => {
         await user.save()
         // console.log(user._id)
         // const token = jwt.sign({ _id: "1" }, 'thisismynewcourse')
-        const token = await user.generateAuthToken()
-        console.log(token)
-        res.status(201).send({user, token})
+        // const token = await user.generateAuthToken()
+        // console.log(token)
+        res.status(201).send(user)
     } catch (e) {
         res.status(400).send(e)
     }
@@ -100,6 +101,7 @@ router.post('/users/completeExam', async (req, res) => {
         const user = await User.findById(req.params.id);
         let exam = {
             examId: req.body.examId,
+            examName:req.body.examName,
             point: req.body.point
         }
         user.exams.push(exam);

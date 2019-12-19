@@ -77,6 +77,9 @@ let userSchema = new mongoose.Schema({
         examId:{
             type:Number
         },
+        examName:{
+          type:String
+        },
         point:{
             type:Number
         }
