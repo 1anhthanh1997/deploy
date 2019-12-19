@@ -65,6 +65,22 @@ let userSchema = new mongoose.Schema({
             required: true
         }
     }],
+    courses:[{
+        courseID:{
+            type:Number
+        },
+        status:{
+            type:String,
+        }
+    }],
+    exams:[{
+        examId:{
+            type:Number
+        },
+        point:{
+            type:Number
+        }
+    }],
     avatar:{
         type:Buffer
     }

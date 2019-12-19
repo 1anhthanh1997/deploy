@@ -9,7 +9,7 @@ let GridFsStorage = require('multer-gridfs-storage');
 let Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
 let gfs;
-
+let filename;
 conn.once('open', () => {
     // Init stream
     gfs = Grid(conn.db, mongoose.mongo);
@@ -21,7 +21,7 @@ const storage = new GridFsStorage({
     url: process.env.MONGODB_URL,
     file: (req, file) => {
         return new Promise((resolve, reject) => {
-            const filename = file.originalname;
+             filename = file.originalname;
             const fileInfo = {
                 filename: filename,
                 bucketName: 'uploads'
@@ -36,8 +36,9 @@ let upload = multer({
     storage: storage
 })
 router.post('/documents/documentFile', upload.single('document'), async (req, res) => {
-   res.send()
+   res.send(filename)
 })
+
 router.post('/documents', (req, res) => {
     var document = new Document({
        courseID:req.body.courseID,

@@ -3,9 +3,9 @@ const {User} = require('../models/user')
 var jwt = require('jsonwebtoken');
 const bcript = require('bcrypt')
 const router = express.Router()
-const multer=require('multer')
-const auth=require('../middleware/auth')
-const sharp=require('sharp')
+const multer = require('multer')
+const auth = require('../middleware/auth')
+const sharp = require('sharp')
 // const upload = multer({
 //     dest: 'avatars'
 // })
@@ -27,12 +27,12 @@ const upload = multer({
     }
 })
 router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) => {
-    const buffer= await sharp(req.file.buffer).resize({height:250,width:250}).png().toBuffer()
+    const buffer = await sharp(req.file.buffer).resize({height: 250, width: 250}).png().toBuffer()
     req.user.avatar = buffer
     await req.user.save()
     res.send()
 }, (error, req, res, next) => {
-    res.status(400).send({ error: error.message })
+    res.status(400).send({error: error.message})
 })
 router.get('/users/:id/avatar', async (req, res) => {
     try {
@@ -58,7 +58,7 @@ router.post('/users', async (req, res) => {
         // const token = jwt.sign({ _id: "1" }, 'thisismynewcourse')
         const token = await user.generateAuthToken()
         console.log(token)
-        res.status(201).send({ user, token })
+        res.status(201).send({user, token})
     } catch (e) {
         res.status(400).send(e)
     }
@@ -82,7 +82,35 @@ router.post('/users', async (req, res) => {
     // });
 
 });
-router.get('/users/me',auth, async (req, res) => {
+router.post('/users/registerCourse', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        let course = {
+            courseID: req.body.courseID,
+            status: "pending"
+        }
+        user.courses.push(course);
+        user.save();
+    } catch (e) {
+        res.status(400).send(e)
+    }
+})
+router.post('/users/completeExam', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        let exam = {
+            examId: req.body.examId,
+            point: req.body.point
+        }
+        user.exams.push(exam);
+        user.save();
+    } catch (e) {
+        res.status(400).send(e)
+    }
+
+
+})
+router.get('/users/me', auth, async (req, res) => {
     res.send(req.user)
     // User.find().then((users) => {
     //     res.send({users});
@@ -95,9 +123,9 @@ router.post('/users/login', async (req, res) => {
         const user = await User.findByCredentials(req.body.username, req.body.password)
         console.log(user)
         const token = await user.generateAuthToken()
-        const publicUser=await user.getPublicInformation()
+        const publicUser = await user.getPublicInformation()
         console.log(publicUser)
-        res.send({user:publicUser, token })
+        res.send({user: publicUser, token})
     } catch (e) {
         res.status(400).send(e)
     }
@@ -152,9 +180,9 @@ router.patch('/users/changePass/:id', (req, res) => {
     var id = req.params.id;
 
     var body = req.body
-    User.findById(id).then((user)=>{
+    User.findById(id).then((user) => {
         res.send(user)
-    }).catch((e)=>console.log(e));
+    }).catch((e) => console.log(e));
 
     // User.findOneAndUpdate({_id: id}, {$set: body}, {new: true}).then((user) => {
     //     if (!user) {
@@ -167,11 +195,11 @@ router.patch('/users/changePass/:id', (req, res) => {
 })
 router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['name', 'address', 'phoneNumber','email','class','permission']
+    const allowedUpdates = ['name', 'address', 'phoneNumber', 'email', 'class', 'permission']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
-        return res.status(400).send({ error: 'Invalid updates!' })
+        return res.status(400).send({error: 'Invalid updates!'})
     }
 
     try {
@@ -215,9 +243,9 @@ router.patch('/users/me', auth, async (req, res) => {
 //         res.status(400).send();
 //     });
 // });
-router.delete('/users/:id',(req,res)=>{
-    User.findByIdAndRemove(req.params.id).then((course)=>{
-        if(!course) return res.status(404).send()
+router.delete('/users/:id', (req, res) => {
+    User.findByIdAndRemove(req.params.id).then((course) => {
+        if (!course) return res.status(404).send()
         res.send(course)
     })
 })
