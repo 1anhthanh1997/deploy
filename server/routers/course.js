@@ -1,39 +1,58 @@
 const express = require('express')
 const {Course} = require("../models/course")
 const router = express.Router()
+const multer = require('multer')
+const sharp = require('sharp')
+const upload = multer({
+    limits: {
+        fileSize: 10000000
+    },
+    fileFilter(req, file, cb) {
+        if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+            return cb(new Error('Please upload an image'))
+        }
 
-router.post('/courses', (req, res) => {
-    var course = new Course({
-        name: req.body.name,
-        teacher:{
-            teacherId: req.body.teacher.teacherId,
-            teacherName: req.body.teacher.teacherName,
-            avatar:req.body.teacher.avatar
-        },
-        description:req.body.description,
-        content:[],
-        schedule: [],
-        studyTime: {
-            lessonTime: req.body.studyTime.lessonTime,
-            courseTime: req.body.studyTime.courseTime,
-        },
-        tuition: req.body.tuition,
-        categories: [],
-        topic: req.body.topic,
-        subject: req.body.subject,
-    });
-    for (var i = 0; i < req.body.schedule.length; i++) {
-        course.schedule.push(req.body.schedule[i]);
+        cb(undefined, true)
     }
-    for (var i = 0; i < req.body.categories.length; i++) {
-        course.categories.push(req.body.categories[i]);
+})
+router.post('/courses',upload.single('avatar'),async (req, res) => {
+    try{
+        const buffer = await sharp(req.file.buffer).resize({height: 250, width: 250}).png().toBuffer()
+        var course = new Course({
+            name: req.body.name,
+            teacher:{
+                teacherId: req.body.teacher.teacherId,
+                teacherName: req.body.teacher.teacherName,
+                avatar:buffer
+            },
+            description:req.body.description,
+            content:[],
+            schedule: [],
+            studyTime: {
+                lessonTime: req.body.studyTime.lessonTime,
+                courseTime: req.body.studyTime.courseTime,
+            },
+            tuition: req.body.tuition,
+            categories: [],
+            topic: req.body.topic,
+            subject: req.body.subject,
+        });
+        for (var i = 0; i < req.body.schedule.length; i++) {
+            course.schedule.push(req.body.schedule[i]);
+        }
+        for (var i = 0; i < req.body.categories.length; i++) {
+            course.categories.push(req.body.categories[i]);
+        }
+        for (var i = 0; i < req.body.content.length; i++) {
+            course.content.push(req.body.content[i]);
+        }
+        course.save()
+        res.send(course)
+    }catch (e) {
+        res.send(e)
     }
-    for (var i = 0; i < req.body.content.length; i++) {
-        course.content.push(req.body.content[i]);
-    }
-    course.save().then((doc) => {
-        res.send(doc)
-    }).catch((err) => res.send(err))
+
+
 })
 router.get('/courses', (req, res) => {
     Course.find().then((courses) => {
